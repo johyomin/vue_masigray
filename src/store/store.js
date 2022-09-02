@@ -1,5 +1,7 @@
 import { createStore } from 'vuex'
 // 모든 Vue 화면에서 공유되어질 state(데이터) 관리 목적
+import axios from 'axios';
+
 
 export default createStore({
 
@@ -67,10 +69,25 @@ export default createStore({
   },
 
   // actions: 서버 및 파일연동, 성공/실패 체크후 mutation 실행
-  actions: {},
+  actions: {
+    // 메뉴 데이터 json 로딩
+    fetchMenudata({commit}){
+
+      axios.get('/data/menu.json')
+        .then(response => {
+          // console.log("axios:",response.data);
+          commit('MENU_DATA_INIT');
+        })
+      .catch(err => console.log(err));
+    }
+  },
   
   // mutations :  state(데이터) 업데이트 자리
-  mutations: {},
+  mutations: {
+    MENU_DATA_INIT(state,payload){
+      state.menuData = payload          
+    }
+  },
   
   // getters : state 를 컴포넌트에 전달, 컴포넌트의 computed 처리
   getters: {

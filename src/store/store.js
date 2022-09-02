@@ -92,6 +92,8 @@ export default createStore({
   // getters : state 를 컴포넌트에 전달, 컴포넌트의 computed 처리
   getters: {
     getMenuData(state){
+      console.log("step4: getters",state.menuData
+      )
       return state.menuData;
     }
   }

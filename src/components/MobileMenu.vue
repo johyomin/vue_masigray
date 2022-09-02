@@ -56,11 +56,13 @@ export default {
     // let mb_menu_li = $('.mb-menu > li');
     let mb_mainmenu = $('.mb-menu > li > a');
     let mb_submenu = $('.mb-submenu');
+    console.log('펼침메뉴:',mb_mainmenu)
 
     $.each(mb_mainmenu, function(index){
-      $(this).click(function(event){
+      $(this).click('click',function(event){
         // href 를 막아준다.
         event.preventDefault();
+        alert(index);
       
         // 클릭하면 현재 포커스 클래스가 있는지 검토
         let temp = $(this).hasClass('mb-menu-focus');
@@ -138,6 +140,12 @@ export default {
         mb_submenu.hide();
       }
     });
+    });
+
+    onUpdated(() => {
+      console.log("onUpdated ========== ")
+      let mb_mainmenu = $('.mb-menu > li > a');      
+      console.log('펼침메뉴 :', mb_mainmenu)
     });
 
     return { 

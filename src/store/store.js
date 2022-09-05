@@ -14,7 +14,7 @@ export default createStore({
   actions: {
     // 메뉴 데이터 json 로딩
     fetchMenudata({commit}){
-      axios.get('/data/menu.json')
+      axios.get('./data/menu.json')
         .then(response => {
           // console.log("axios:", response.data);
           commit('MENU_DATA_INIT', response.data);

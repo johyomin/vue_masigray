@@ -7,6 +7,9 @@
     <HeaderView />
     <VisualView />
     <ItemView />
+    <BeverageView/>
+    <FranchiserView/>
+    <SnsView/>
     <FooterView />
   </div>
 </template>
@@ -19,6 +22,9 @@
   import HeaderView from '@/components/HeaderView.vue'
   import VisualView from '@/components/VisualView.vue'
   import ItemView from '@/components/ItemView.vue'
+  import BeverageView from '@/components/BeverageView.vue'
+  import FranchiserView from '@/components/FranchiserView.vue'
+  import SnsView from '@/components/SnsView.vue'
   import FooterView from '@/components/FooterView.vue'
   import {useStore} from 'vuex'
   export default {
@@ -31,6 +37,9 @@
       HeaderView,
       VisualView,
       ItemView,
+      BeverageView,
+      FranchiserView,
+      SnsView,
       FooterView
     },
     setup() {
